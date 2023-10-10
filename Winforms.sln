@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1-dars", "1-dars\1-dars.csproj", "{F4975728-915B-49D0-BD28-E390A396D13F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1-dars", "1-dars\1-dars.csproj", "{F4975728-915B-49D0-BD28-E390A396D13F}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Calculator", "Calculator\Calculator.vdproj", "{CB39607F-892F-4A19-86DB-9D211F383203}"
 EndProject
