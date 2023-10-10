@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1-dars", "1-dars\1-dars.csp
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Calculator", "Calculator\Calculator.vdproj", "{CB39607F-892F-4A19-86DB-9D211F383203}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatApp", "ChatApp\ChatApp.csproj", "{FE268913-EE87-4F4C-95DB-DA48473D88CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{F4975728-915B-49D0-BD28-E390A396D13F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CB39607F-892F-4A19-86DB-9D211F383203}.Debug|Any CPU.ActiveCfg = Debug
 		{CB39607F-892F-4A19-86DB-9D211F383203}.Release|Any CPU.ActiveCfg = Release
+		{FE268913-EE87-4F4C-95DB-DA48473D88CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE268913-EE87-4F4C-95DB-DA48473D88CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE268913-EE87-4F4C-95DB-DA48473D88CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE268913-EE87-4F4C-95DB-DA48473D88CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

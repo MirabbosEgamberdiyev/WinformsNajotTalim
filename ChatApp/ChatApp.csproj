@@ -3,20 +3,13 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0-windows</TargetFramework>
-    <RootNamespace>_1_dars</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="XanderUI">
-      <HintPath>..\ChatApp\bin\Debug\net7.0-windows\XanderUI.dll</HintPath>
-    </Reference>
+    <PackageReference Include="guna.ui2.winforms" Version="2.0.4.5" />
   </ItemGroup>
 
   <ItemGroup>
