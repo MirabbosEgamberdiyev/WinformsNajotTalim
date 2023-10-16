@@ -109,6 +109,7 @@
             search.ShadowDecoration.CustomizableEdges = customizableEdges4;
             search.Size = new Size(278, 39);
             search.TabIndex = 1;
+            search.TextChanged += search_TextChanged;
             // 
             // label1
             // 

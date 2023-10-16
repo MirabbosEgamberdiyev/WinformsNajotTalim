@@ -16,7 +16,8 @@ public class InventoryDbContext : DbContext
     public DbSet<IncomeProduct> IncomeProducts { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-       => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB; Database=InventoryDB;");
+        => optionsBuilder.UseSqlServer($"Data Source=(LocalDB)\\MSSQLLocalDB; Database=InventoryDB;");
+
     //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     //   => optionsBuilder.UseSqlite("Data Source=InventoryDB.db;");
 

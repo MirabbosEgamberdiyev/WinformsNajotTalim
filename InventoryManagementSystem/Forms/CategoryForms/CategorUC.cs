@@ -1,4 +1,5 @@
-﻿using InventoryManagementSystem.Data;
+﻿using DocumentFormat.OpenXml.Drawing.Charts;
+using InventoryManagementSystem.Data;
 using InventoryManagementSystem.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,7 +15,19 @@ public partial class CategorUC : UserControl
 
     private void CategorUC_Load(object sender, EventArgs e)
     {
-        //LoadData();
+        Thread thread = new(LoadDataInBackground);
+        thread.IsBackground = true;
+        thread.Start();
+    }
+
+    private void LoadDataInBackground()
+    {
+        InventoryDbContext dbContext = new();
+        var categories = dbContext.Categories.Select(i => new { Id = i.Id, Name = i.Name }).ToList();
+        categoryList.Invoke((MethodInvoker)delegate
+        {
+            categoryList.DataSource = categories;
+        });
     }
 
 

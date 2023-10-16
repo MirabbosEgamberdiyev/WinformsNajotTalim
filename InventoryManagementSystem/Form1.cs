@@ -1,3 +1,5 @@
+using InventoryManagementSystem.Forms;
+
 namespace InventoryManagementSystem
 {
     public partial class Form1 : Form
@@ -24,6 +26,7 @@ namespace InventoryManagementSystem
         {
             categoruc1.Visible = false;
             productsuc1.Visible = false;
+            incomeuc1.Visible = false;
         }
 
         private void OpenCategories()
@@ -36,6 +39,28 @@ namespace InventoryManagementSystem
         {
             CloseAll();
             productsuc1.Visible = true;
+        }
+
+        private void OpenIncomes()
+        {
+            CloseAll();
+            incomeuc1.Visible = true;
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            OpenIncomes();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Login().Show();
         }
     }
 }

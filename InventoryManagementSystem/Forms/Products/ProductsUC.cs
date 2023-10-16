@@ -1,4 +1,5 @@
-﻿using Guna.UI2.WinForms.Suite;
+﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
+using Guna.UI2.WinForms.Suite;
 using InventoryManagementSystem.Data;
 
 namespace InventoryManagementSystem.Forms.Products;
@@ -14,9 +15,29 @@ public partial class ProductsUC : UserControl
 
     private void ProductsUC_Load(object sender, EventArgs e)
     {
-        //LoadData();
+        Thread thread = new(LoadDataInBackground);
+        thread.IsBackground = true;
+        thread.Start();
     }
 
+    private void LoadDataInBackground()
+    {
+        InventoryDbContext dbContext = new();
+        var categories = dbContext.Products.Select(p => new
+        {
+            Id = p.Id,
+            Name = p.Name,
+            Qantity = dbContext.IncomeProducts.Where(i => i.ProductId == p.Id).Sum(p => p.Quantity),
+            Price = p.Price,
+            Description = p.Description,
+            Category = dbContext.Categories.FirstOrDefault(c => c.Id == p.CategoryId).Name,
+        }).ToList();
+
+        productList.Invoke((MethodInvoker)delegate
+        {
+            productList.DataSource = categories;
+        });
+    }
     private void guna2Button4_Click(object sender, EventArgs e)
     {
         LoadData();
@@ -30,9 +51,10 @@ public partial class ProductsUC : UserControl
             {
                 Id = p.Id,
                 Name = p.Name,
+                Qantity = dbContext.IncomeProducts.Where(i => i.ProductId == p.Id).Sum(p => p.Quantity),
                 Price = p.Price,
                 Description = p.Description,
-                Category = dbContext.Categories.FirstOrDefault(c => c.Id == p.CategoryId).Name
+                Category = dbContext.Categories.FirstOrDefault(c => c.Id == p.CategoryId).Name,
             })
             .ToList();
     }
@@ -90,5 +112,22 @@ public partial class ProductsUC : UserControl
         using InventoryDbContext dbContext = new();
         var excelExport = new ExcelExport();
         excelExport.ExportToExcel(dbContext.Products.ToList(), path);
+    }
+
+    private void search_TextChanged(object sender, EventArgs e)
+    {
+        InventoryDbContext dbContext = new();
+        productList.DataSource = dbContext.Products
+            .Where(c => c.Name.ToLower().Contains(search.Text.ToLower()))
+            .Select(p => new
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Qantity = dbContext.IncomeProducts.Where(i => i.ProductId == p.Id).Sum(p => p.Quantity),
+                Price = p.Price,
+                Description = p.Description,
+                Category = dbContext.Categories.FirstOrDefault(c => c.Id == p.CategoryId).Name
+            })
+            .ToList();
     }
 }
