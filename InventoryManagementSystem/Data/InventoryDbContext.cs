@@ -1,5 +1,6 @@
 ﻿using InventoryManagementSystem.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace InventoryManagementSystem.Data;
 
@@ -19,7 +20,7 @@ public class InventoryDbContext : DbContext
         => optionsBuilder.UseSqlServer($"Data Source=(LocalDB)\\MSSQLLocalDB; Database=InventoryDB;");
 
     //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    //   => optionsBuilder.UseSqlite("Data Source=InventoryDB.db;");
+    //   => optionsBuilder.UseSqlite($"Data Source = {Path.Combine(Assembly.GetExecutingAssembly().Location, "InventoryDB.db")}");
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InventoryManagementSystem.Models;
 
-[Table("Admins")]
 public class Admin : BaseModel
 {
     [Required]
