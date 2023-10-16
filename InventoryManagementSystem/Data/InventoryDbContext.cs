@@ -17,6 +17,8 @@ public class InventoryDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
        => optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB; Database=InventoryDB;");
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //   => optionsBuilder.UseSqlite("Data Source=InventoryDB.db;");
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

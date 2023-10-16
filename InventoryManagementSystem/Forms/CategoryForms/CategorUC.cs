@@ -72,6 +72,7 @@ public partial class CategorUC : UserControl
     private void categoryList_CellClick(object sender, DataGridViewCellEventArgs e)
     {
         selectedId = int.Parse(categoryList.SelectedRows[0].Cells[0].Value.ToString());
+        products.Visible = true;
     }
 
     private Category? GetById(int id)
@@ -91,5 +92,11 @@ public partial class CategorUC : UserControl
     private void guna2Button4_Click(object sender, EventArgs e)
     {
         LoadData();
+    }
+
+    private void products_Click(object sender, EventArgs e)
+    {
+        CategoryProducts categoryProducts = new(selectedId);
+        categoryProducts.ShowDialog();
     }
 }

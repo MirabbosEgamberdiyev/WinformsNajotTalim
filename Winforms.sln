@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRUD", "CRUD\CRUD.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRUD_EF", "CRUD_EF\CRUD_EF.csproj", "{EFADEA03-F918-4278-AE27-2CF23C1E18CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF_DatabaseFirst", "EF_DatabaseFirst\EF_DatabaseFirst.csproj", "{F42C29E1-0A29-47DD-8210-B8EDCD2E6E88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF_DatabaseFirst", "EF_DatabaseFirst\EF_DatabaseFirst.csproj", "{F42C29E1-0A29-47DD-8210-B8EDCD2E6E88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryManagementSystem", "InventoryManagementSystem\InventoryManagementSystem.csproj", "{B3435E1F-7A26-43B1-8A6F-5973768D388D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryManagementSystem", "InventoryManagementSystem\InventoryManagementSystem.csproj", "{B3435E1F-7A26-43B1-8A6F-5973768D388D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
