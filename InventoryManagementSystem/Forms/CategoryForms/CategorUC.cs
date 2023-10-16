@@ -1,26 +1,26 @@
 ﻿using InventoryManagementSystem.Data;
 using InventoryManagementSystem.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace InventoryManagementSystem.Forms.CategoryForms;
 
 public partial class CategorUC : UserControl
 {
-    private InventoryDbContext dbContext;
     int selectedId = 0;
     public CategorUC()
     {
         InitializeComponent();
-        dbContext = new();
     }
 
     private void CategorUC_Load(object sender, EventArgs e)
     {
-        LoadData();
+        //LoadData();
     }
 
 
     private void LoadData()
     {
+        InventoryDbContext dbContext = new();
         categoryList.DataSource = dbContext.Categories.Select(i => new { Id = i.Id, Name = i.Name }).ToList();
     }
 
@@ -34,10 +34,17 @@ public partial class CategorUC : UserControl
     //edit btn click
     private void guna2Button2_Click(object sender, EventArgs e)
     {
-        var category = GetById(selectedId);
-        var edit = new EditCatagory(selectedId, category.Name);
-        edit.ShowDialog();
-        LoadData();
+        if (selectedId != 0)
+        {
+            var category = GetById(selectedId);
+            var edit = new EditCatagory(selectedId, category.Name);
+            edit.ShowDialog();
+            LoadData();
+        }
+        else
+        {
+            MessageBox.Show("Select category!");
+        }
     }
 
     //delete btn click
@@ -52,6 +59,7 @@ public partial class CategorUC : UserControl
             var category = GetById(selectedId);
             if (category != null)
             {
+                InventoryDbContext dbContext = new();
                 dbContext.Categories.Remove(category);
                 dbContext.SaveChanges();
                 LoadData();
@@ -67,12 +75,21 @@ public partial class CategorUC : UserControl
     }
 
     private Category? GetById(int id)
-        => dbContext.Categories.FirstOrDefault(c => c.Id == selectedId);
+    {
+        InventoryDbContext dbContext = new();
+        return dbContext.Categories.FirstOrDefault(c => c.Id == selectedId);
+    }
 
     private void guna2TextBox1_TextChanged(object sender, EventArgs e)
     {
+        InventoryDbContext dbContext = new();
         categoryList.DataSource = dbContext.Categories
             .Where(c => c.Name.ToLower().Contains(search.Text.ToLower()))
             .Select(i => new { Id = i.Id, Name = i.Name }).ToList();
+    }
+
+    private void guna2Button4_Click(object sender, EventArgs e)
+    {
+        LoadData();
     }
 }

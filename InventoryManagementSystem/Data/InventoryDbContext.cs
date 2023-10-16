@@ -5,6 +5,11 @@ namespace InventoryManagementSystem.Data;
 
 public class InventoryDbContext : DbContext
 {
+    public InventoryDbContext()
+    {
+        Database.EnsureCreated();
+    }
+
     public DbSet<Admin> Admins { get; set; }
     public DbSet<Category> Categories { get; set; }
     public DbSet<Product> Products { get; set; }

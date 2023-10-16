@@ -6,5 +6,17 @@ namespace InventoryManagementSystem
         {
             InitializeComponent();
         }
+
+        //open categories
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //open products
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

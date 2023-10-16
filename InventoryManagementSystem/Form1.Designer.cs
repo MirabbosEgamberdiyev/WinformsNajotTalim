@@ -43,6 +43,7 @@
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             label1 = new Label();
             panel2 = new Panel();
+            productsuc1 = new Forms.Products.ProductsUC();
             categoruc1 = new Forms.CategoryForms.CategorUC();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -112,6 +113,7 @@
             guna2Button2.Size = new Size(194, 46);
             guna2Button2.TabIndex = 2;
             guna2Button2.Text = "Products";
+            guna2Button2.Click += guna2Button2_Click;
             // 
             // guna2Button1
             // 
@@ -129,6 +131,7 @@
             guna2Button1.Size = new Size(194, 46);
             guna2Button1.TabIndex = 1;
             guna2Button1.Text = "Categories";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // label1
             // 
@@ -143,26 +146,36 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(productsuc1);
             panel2.Controls.Add(categoruc1);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(238, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(583, 485);
+            panel2.Size = new Size(691, 485);
             panel2.TabIndex = 1;
+            // 
+            // productsuc1
+            // 
+            productsuc1.Dock = DockStyle.Fill;
+            productsuc1.Location = new Point(0, 0);
+            productsuc1.Name = "productsuc1";
+            productsuc1.Size = new Size(691, 485);
+            productsuc1.TabIndex = 1;
+            productsuc1.Visible = false;
             // 
             // categoruc1
             // 
             categoruc1.Dock = DockStyle.Fill;
             categoruc1.Location = new Point(0, 0);
             categoruc1.Name = "categoruc1";
-            categoruc1.Size = new Size(583, 485);
+            categoruc1.Size = new Size(691, 485);
             categoruc1.TabIndex = 0;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(821, 485);
+            ClientSize = new Size(929, 485);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "Form1";
@@ -184,6 +197,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Panel panel2;
+        private Forms.Products.ProductsUC productsuc1;
         private Forms.CategoryForms.CategorUC categoruc1;
     }
 }
