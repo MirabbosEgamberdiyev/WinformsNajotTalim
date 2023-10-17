@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryManagementSystem",
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "IMS master", "IMS master\IMS master.vdproj", "{658A4382-A0F8-4570-B1FA-D12B8C7E4B2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Takrorlash", "Takrorlash\Takrorlash.csproj", "{AF6114B5-5F22-45F5-88A9-6044D91D7C47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{658A4382-A0F8-4570-B1FA-D12B8C7E4B2B}.Debug|Any CPU.Build.0 = Debug
 		{658A4382-A0F8-4570-B1FA-D12B8C7E4B2B}.Release|Any CPU.ActiveCfg = Release
 		{658A4382-A0F8-4570-B1FA-D12B8C7E4B2B}.Release|Any CPU.Build.0 = Release
+		{AF6114B5-5F22-45F5-88A9-6044D91D7C47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF6114B5-5F22-45F5-88A9-6044D91D7C47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF6114B5-5F22-45F5-88A9-6044D91D7C47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF6114B5-5F22-45F5-88A9-6044D91D7C47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
